@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">WeatherTitan</string>
+     <string name="searchButton">Search</string>
+</resources>
