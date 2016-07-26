@@ -1,4 +1,7 @@
 <resources>
     <string name="app_name">WeatherTitan</string>
-     <string name="searchButton">Search</string>
+    <string name="searchButton">Search</string>
+    <string name="searchable">Searchable</string>
+    <string name="menu_search">Search</string>
+    <string name="searchable_hint">Search</string>
 </resources>
