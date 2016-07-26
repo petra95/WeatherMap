@@ -1,5 +1,8 @@
 <resources>
     <string name="app_name">WeatherTitan</string>
-    <string name="search">Search</string>
-    <string name="about">About</string>
+    <string name="min">Minimum</string>
+    <string name="max">Maximum</string>
+    <string name="wind">Wind force</string>
+    <string name="rain">Rain</string>
+    <string name="hum">Humidity</string>
 </resources>
