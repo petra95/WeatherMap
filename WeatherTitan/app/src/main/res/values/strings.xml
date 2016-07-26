@@ -1,4 +1,15 @@
 <resources>
     <string name="app_name">WeatherTitan</string>
-     <string name="searchButton">Search</string>
+<<<<<<< .merge_file_a04860
+    <string name="min">Minimum</string>
+    <string name="max">Maximum</string>
+    <string name="wind">Wind force</string>
+    <string name="rain">Rain</string>
+    <string name="hum">Humidity</string>
+=======
+    <string name="searchButton">Search</string>
+    <string name="searchable">Searchable</string>
+    <string name="menu_search">Search</string>
+    <string name="searchable_hint">Search</string>
+>>>>>>> .merge_file_a00492
 </resources>
