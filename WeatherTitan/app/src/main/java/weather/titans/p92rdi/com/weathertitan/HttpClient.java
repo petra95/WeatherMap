@@ -2,7 +2,6 @@ package weather.titans.p92rdi.com.weathertitan;
 
 
 import java.io.BufferedReader;
-import java.io.ByteArrayOutputStream;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
@@ -39,8 +38,8 @@ public class HttpClient {
             t.printStackTrace();
         }
         finally {
-            try { mInputStream.close(); } catch(Throwable ignored) {}
-            try { mConnection.disconnect(); } catch(Throwable ignored) {}
+            try { mInputStream.close(); } catch (Throwable ignored) {}
+            try { mConnection.disconnect(); } catch (Throwable ignored) {}
         }
 
         return null;
