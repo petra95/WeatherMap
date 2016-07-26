@@ -8,6 +8,7 @@ import android.view.MenuInflater;
 import android.support.v7.widget.SearchView;
 import android.view.MenuItem;
 
+
 public class MainWeather extends AppCompatActivity {
 
     private final String MTEXTVALUEKEYSTRING = "MyTextKey";
@@ -20,7 +21,7 @@ public class MainWeather extends AppCompatActivity {
         /*SharedPreferences sharedPreferences = getSharedPreferences(MTEXTVALUEKEYSTRING, 0);
         final EditText editText = (EditText) findViewById(R.id.searchEditText);
         editText.setText(sharedPreferences.getString("valueText", ""));*/
-        
+
     }
    /* @Override
     public void onStop() {
@@ -33,6 +34,8 @@ public class MainWeather extends AppCompatActivity {
 
         editor.commit();
     }*/
+
+    
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {

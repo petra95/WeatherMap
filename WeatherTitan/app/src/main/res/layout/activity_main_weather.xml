@@ -12,6 +12,7 @@
     android:paddingTop="@dimen/activity_vertical_margin">
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 <<<<<<< .merge_file_a05276
 =======
 >>>>>>> origin/petra_branch
@@ -128,4 +129,6 @@
 
 =======
 >>>>>>> .merge_file_a02676
+=======
+>>>>>>> origin/dobi_branch
 </LinearLayout>

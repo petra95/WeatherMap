@@ -1,6 +1,7 @@
 <resources>
     <string name="app_name">WeatherTitan</string>
 <<<<<<< HEAD
+<<<<<<< HEAD
 <<<<<<< .merge_file_a04860
 =======
 >>>>>>> origin/petra_branch
@@ -11,11 +12,16 @@
     <string name="hum">Humidity</string>
 <<<<<<< HEAD
 =======
+=======
+>>>>>>> origin/dobi_branch
     <string name="searchButton">Search</string>
     <string name="searchable">Searchable</string>
     <string name="menu_search">Search</string>
     <string name="searchable_hint">Search</string>
+<<<<<<< HEAD
 >>>>>>> .merge_file_a00492
 =======
 >>>>>>> origin/petra_branch
+=======
+>>>>>>> origin/dobi_branch
 </resources>
