@@ -13,7 +13,7 @@ public class HttpClient {
     private static String API_KEY = "&appid=6400cc1cfebfb4e0cab17b0eb34472da";
 
     public String getWeatherData(String cityName) {
-        HttpURLConnection mConnection = null ;
+        HttpURLConnection mConnection = null;
         InputStream mInputStream = null;
 
         try {

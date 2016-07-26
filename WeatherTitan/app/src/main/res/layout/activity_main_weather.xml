@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -10,20 +10,10 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin">
-
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< .merge_file_a05276
-=======
->>>>>>> origin/petra_branch
-    <TableLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
         <TextView
             android:id="@+id/cityTextView"
             style="@style/mainTextViewTheme"
-            android:textSize="@dimen/text_view_size"
-            android:text="Budapest"/>
+            android:textSize="@dimen/text_view_size" />
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -45,8 +35,8 @@
                 android:layout_height="wrap_content"
                 android:gravity="end"
                 android:paddingStart="10dp"
-                android:textSize="@dimen/temp_text_view_size"
-                android:text="25°"/>
+                android:paddingEnd="10dp"
+                android:textSize="@dimen/temp_text_view_size" />
         </LinearLayout>
 
         <TextView
@@ -55,8 +45,7 @@
             android:layout_height="wrap_content"
             android:layout_marginBottom="@dimen/activity_horizontal_margin"
             android:gravity="center_horizontal"
-            android:textSize="@dimen/descr_text_view_size"
-            android:text="windy"/>
+            android:textSize="@dimen/descr_text_view_size" />
 
     <ScrollView>
     <TableLayout
@@ -72,8 +61,7 @@
                 android:text="@string/min"/>
             <TextView
                 android:id="@+id/minDegTextView"
-                style="@style/dataTextViewTheme"
-                android:text="tudzts"/>
+                style="@style/dataTextViewTheme" />
         </TableRow>
         <TableRow
             android:layout_width="fill_parent"
@@ -84,8 +72,7 @@
                 android:text="@string/max"/>
             <TextView
                 android:id="@+id/maxDegTextView"
-                style="@style/dataTextViewTheme"
-                android:text="tudzts"/>
+                style="@style/dataTextViewTheme" />
         </TableRow>
         <TableRow
             android:layout_width="fill_parent"
@@ -96,8 +83,7 @@
                 android:text="@string/wind"/>
             <TextView
                 android:id="@+id/windTextView"
-                style="@style/dataTextViewTheme"
-                android:text="tudzts"/>
+                style="@style/dataTextViewTheme" />
         </TableRow>
         <TableRow
             android:layout_width="fill_parent"
@@ -108,8 +94,7 @@
                 android:text="@string/rain"/>
             <TextView
                 android:id="@+id/rainTextView"
-                style="@style/dataTextViewTheme"
-                android:text="tudzts"/>
+                style="@style/dataTextViewTheme" />
         </TableRow>
         <TableRow
             android:layout_width="fill_parent"
@@ -120,15 +105,8 @@
                 android:text="@string/hum"/>
             <TextView
                 android:id="@+id/humidityTextView"
-                style="@style/dataTextViewTheme"
-                android:text="tudzts" />
+                style="@style/dataTextViewTheme" />
         </TableRow>
         </TableLayout>
     </ScrollView>
-    </TableLayout>
-
-=======
->>>>>>> .merge_file_a02676
-=======
->>>>>>> origin/dobi_branch
-</LinearLayout>
+</TableLayout>

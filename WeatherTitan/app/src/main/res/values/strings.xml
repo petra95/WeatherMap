@@ -1,27 +1,12 @@
 <resources>
     <string name="app_name">WeatherTitan</string>
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< .merge_file_a04860
-=======
->>>>>>> origin/petra_branch
     <string name="min">Minimum</string>
     <string name="max">Maximum</string>
     <string name="wind">Wind force</string>
     <string name="rain">Rain</string>
     <string name="hum">Humidity</string>
-<<<<<<< HEAD
-=======
-=======
->>>>>>> origin/dobi_branch
     <string name="searchButton">Search</string>
     <string name="searchable">Searchable</string>
     <string name="menu_search">Search</string>
     <string name="searchable_hint">Search</string>
-<<<<<<< HEAD
->>>>>>> .merge_file_a00492
-=======
->>>>>>> origin/petra_branch
-=======
->>>>>>> origin/dobi_branch
 </resources>

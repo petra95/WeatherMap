@@ -12,8 +12,7 @@
             style="@style/mainTextViewTheme"
             android:textSize="@dimen/text_view_size"
             android:paddingStart="@dimen/activity_horizontal_margin"
-            android:paddingEnd="25dp"
-            android:text="Budapest"/>
+            android:paddingEnd="25dp" />
         <TableRow
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -33,14 +32,12 @@
                 android:gravity="end"
                 android:paddingStart="@dimen/activity_horizontal_margin"
                 android:paddingEnd="@dimen/activity_horizontal_margin"
-                android:textSize="@dimen/temp_text_view_size"
-                android:text="25°"/>
+                android:textSize="@dimen/temp_text_view_size" />
             <TextView
                 android:id="@+id/descriptionTextView"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textSize="@dimen/descr_text_view_size"
-                android:text="windy"/>
+                android:textSize="@dimen/descr_text_view_size" />
         </TableRow>
 
         <ScrollView>
@@ -57,8 +54,7 @@
                         android:text="@string/min"/>
                     <TextView
                         android:id="@+id/minDegTextView"
-                        style="@style/dataTextViewTheme"
-                        android:text="tudzts"/>
+                        style="@style/dataTextViewTheme" />
                 </TableRow>
                 <TableRow
                     android:layout_width="fill_parent"
@@ -69,8 +65,7 @@
                         android:text="@string/max"/>
                     <TextView
                         android:id="@+id/maxDegTextView"
-                        style="@style/dataTextViewTheme"
-                        android:text="tudzts"/>
+                        style="@style/dataTextViewTheme" />
                 </TableRow>
                 <TableRow
                     android:layout_width="fill_parent"
@@ -81,8 +76,7 @@
                         android:text="@string/wind"/>
                     <TextView
                         android:id="@+id/windTextView"
-                        style="@style/dataTextViewTheme"
-                        android:text="tudzts"/>
+                        style="@style/dataTextViewTheme" />
                 </TableRow>
                 <TableRow
                     android:layout_width="fill_parent"
@@ -93,8 +87,7 @@
                         android:text="@string/rain"/>
                     <TextView
                         android:id="@+id/rainTextView"
-                        style="@style/dataTextViewTheme"
-                        android:text="tudzts"/>
+                        style="@style/dataTextViewTheme" />
                 </TableRow>
                 <TableRow
                     android:layout_width="fill_parent"
@@ -105,8 +98,7 @@
                         android:text="@string/hum"/>
                     <TextView
                         android:id="@+id/humidityTextView"
-                        style="@style/dataTextViewTheme"
-                        android:text="tudzts" />
+                        style="@style/dataTextViewTheme" />
                 </TableRow>
             </TableLayout>
         </ScrollView>
