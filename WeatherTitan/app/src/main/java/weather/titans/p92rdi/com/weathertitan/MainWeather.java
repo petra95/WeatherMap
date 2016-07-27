@@ -72,14 +72,13 @@ public class MainWeather extends AppCompatActivity {
 
     private void assignWeatherValues(Weather weatherData) {
         setTextViewText(R.id.cityTextView, weatherData.getmCity().concat(" " + weatherData.getmCountry()));
-        setTextViewText(R.id.degreeTextView, String.valueOf(weatherData.getmTemperature()));
+        setTextViewText(R.id.degreeTextView, String.valueOf(weatherData.getmTemperature() - 273) + " C°");
         setTextViewText(R.id.descriptionTextView, weatherData.getmDescription());
-        setTextViewText(R.id.minDegTextView, String.valueOf(weatherData.getmTempMin()));
-        setTextViewText(R.id.maxDegTextView, String.valueOf(weatherData.getmTempMax()));
-        setTextViewText(R.id.windTextView, String.valueOf(weatherData.getmWind()));
-        setTextViewText(R.id.humidityTextView, String.valueOf(weatherData.getmHumidity()));
+        setTextViewText(R.id.minDegTextView, String.valueOf(weatherData.getmTempMin() - 273) + " C°");
+        setTextViewText(R.id.maxDegTextView, String.valueOf(weatherData.getmTempMax() - 273) + " C°");
+        setTextViewText(R.id.windTextView, String.valueOf(weatherData.getmWind()) + " m/s");
+        setTextViewText(R.id.humidityTextView, String.valueOf(weatherData.getmHumidity())+ "%");
         ImageView mImageView = (ImageView) findViewById(R.id.weatherImageView);
-        mImageView.setImageBitmap();
     }
 
     private void setTextViewText(int id, String value) {
