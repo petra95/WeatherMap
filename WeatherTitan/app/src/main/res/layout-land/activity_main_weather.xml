@@ -15,8 +15,7 @@
             android:id="@+id/cityTextView"
             style="@style/mainTextViewTheme"
             android:paddingEnd="25dp"
-            android:paddingStart="@dimen/activity_horizontal_margin"
-            android:textSize="@dimen/text_view_size" />
+            android:paddingStart="@dimen/activity_horizontal_margin"/>
 
         <ImageView
             android:id="@+id/weatherImageView"
@@ -27,16 +26,12 @@
             android:id="@+id/degreeTextView"
             style="@style/degreeTextViewTheme"
             android:paddingEnd="@dimen/activity_horizontal_margin"
-            android:paddingStart="@dimen/activity_horizontal_margin" />
+            android:paddingStart="@dimen/activity_horizontal_margin"
+            />
 
         <TextView
             android:id="@+id/descriptionTextView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:maxLines="10"
-            android:scrollHorizontally="false"
-            android:textColor="@color/textColor"
-            android:textSize="@dimen/descr_text_view_size" />
+            style="@style/descriptionTextViewThem" />
     </LinearLayout>
 
     <LinearLayout
@@ -48,12 +43,12 @@
 
         <ScrollView
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:gravity="center">
+            android:layout_height="match_parent">
 
             <TableLayout
                 android:id="@+id/dataTableLayout"
-                style="@style/dataTableLayoutTheme">
+                style="@style/dataTableLayoutTheme"
+                android:paddingTop="70dp">
 
                 <TableRow
                     android:layout_width="fill_parent"
