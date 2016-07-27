@@ -8,7 +8,6 @@ public class Weather {
     private int mTempMin;
     private int mTempMax;
     private String mIcon;
-    private int mRain;
     private int mHumidity;
     private int mWind;
 
@@ -16,12 +15,11 @@ public class Weather {
 
         mCity = "Unknown Settlement!";
         mCountry = "";
-        mDescription = "";
+        mDescription = "dkanrgneq orgnoe GN O QERTGH NOENAhg";
         mTemperature = 0;
         mTempMin = 0;
         mTempMax = 0;
-        mIcon = "unknown.png";
-        mRain = 0;
+        mIcon = "";
         mHumidity = 0;
         mWind = 0;
     }
@@ -80,14 +78,6 @@ public class Weather {
 
     public void setmIcon(String mIcon) {
         this.mIcon = mIcon;
-    }
-
-    public int getmRain() {
-        return mRain;
-    }
-
-    public void setmRain(int mRain) {
-        this.mRain = mRain;
     }
 
     public int getmHumidity() {

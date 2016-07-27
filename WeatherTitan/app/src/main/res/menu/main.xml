@@ -13,32 +13,35 @@
 
     <item
         android:id="@+id/menu_load_slot1"
-        android:title="load_slot1_empty"
-        android:onClick="LoadCityWeather"
+        android:title="@string/slot1_load_title"
+        android:onClick="loadCityWeather"
         />
     <item
         android:id="@+id/menu_save_slot1"
-        android:title="save_slot1"
-        android:onClick="SaveCityWeather"
+        android:title="@string/slot1_save_title"
+        android:onClick="saveCityWeather"
         />
     <item
         android:id="@+id/menu_load_slot2"
-        android:title="laod_slot2_empty"
-        android:onClick="LoadCityWeather"
+        android:title="@string/slot2_load_title"
+        android:onClick="loadCityWeather"
+
         />
     <item
         android:id="@+id/menu_save_slot2"
-        android:title="save_slot2"
-        android:onClick="SaveCityWeather"
+        android:title="@string/slot2_save_title"
+        android:onClick="saveCityWeather"
+
         />
     <item
         android:id="@+id/menu_load_slot3"
-        android:title="laod_slot3_empty"
-        android:onClick="LoadCityWeather"
+        android:title="@string/slot3_load_title"
+        android:onClick="loadCityWeather"
+
         />
     <item
         android:id="@+id/menu_save_slot3"
-        android:title="save_slot3"
-        android:onClick="SaveCityWeather"
+        android:title="@string/slot3_save_title"
+        android:onClick="saveCityWeather"
         />
 </menu>

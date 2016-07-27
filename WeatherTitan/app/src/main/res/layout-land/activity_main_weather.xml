@@ -2,105 +2,115 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="horizontal"
-    android:background="@color/backGroundColor">
-    <TableLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+    android:background="@drawable/weather"
+    android:orientation="horizontal">
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_weight="0.5"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
         <TextView
             android:id="@+id/cityTextView"
             style="@style/mainTextViewTheme"
-            android:textSize="@dimen/text_view_size"
+            android:paddingEnd="25dp"
             android:paddingStart="@dimen/activity_horizontal_margin"
-            android:paddingEnd="25dp" />
-        <TableRow
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:gravity="center"
-            android:weightSum="1">
-            <ImageView
-                android:id="@+id/weatherImageView"
-                android:adjustViewBounds="true"
-                android:maxWidth="@dimen/activity_horizontal_margin"
-                android:maxHeight="@dimen/activity_horizontal_margin"
-                android:background="@color/colorPrimaryDark"/>
-            <TextView
-                android:id="@+id/degreeTextView"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:gravity="end"
-                android:paddingStart="@dimen/activity_horizontal_margin"
-                android:paddingEnd="@dimen/activity_horizontal_margin"
-                android:textSize="@dimen/temp_text_view_size" />
-            <TextView
-                android:id="@+id/descriptionTextView"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:textSize="@dimen/descr_text_view_size" />
-        </TableRow>
+            android:textSize="@dimen/text_view_size" />
 
-        <ScrollView>
+        <ImageView
+            android:id="@+id/weatherImageView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:id="@+id/degreeTextView"
+            style="@style/degreeTextViewTheme"
+            android:paddingEnd="@dimen/activity_horizontal_margin"
+            android:paddingStart="@dimen/activity_horizontal_margin" />
+
+        <TextView
+            android:id="@+id/descriptionTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:maxLines="10"
+            android:scrollHorizontally="false"
+            android:textColor="@color/textColor"
+            android:textSize="@dimen/descr_text_view_size" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_weight="0.5"
+        android:layout_height="match_parent"
+        android:paddingEnd="10dp"
+        android:paddingStart="10dp">
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center">
+
             <TableLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:paddingBottom="10dp">
+                android:id="@+id/dataTableLayout"
+                style="@style/dataTableLayoutTheme">
+
                 <TableRow
                     android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
                     android:gravity="center_horizontal">
+
                     <TextView
                         style="@style/fixedTextViewTheme"
-                        android:text="@string/min"/>
+                        android:text="@string/min" />
+
                     <TextView
                         android:id="@+id/minDegTextView"
                         style="@style/dataTextViewTheme" />
                 </TableRow>
+
                 <TableRow
                     android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
                     android:gravity="center_horizontal">
+
                     <TextView
                         style="@style/fixedTextViewTheme"
-                        android:text="@string/max"/>
+                        android:text="@string/max" />
+
                     <TextView
                         android:id="@+id/maxDegTextView"
                         style="@style/dataTextViewTheme" />
                 </TableRow>
+
                 <TableRow
                     android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
                     android:gravity="center_horizontal">
+
                     <TextView
                         style="@style/fixedTextViewTheme"
-                        android:text="@string/wind"/>
+                        android:text="@string/wind" />
+
                     <TextView
                         android:id="@+id/windTextView"
                         style="@style/dataTextViewTheme" />
                 </TableRow>
+
                 <TableRow
                     android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
                     android:gravity="center_horizontal">
+
                     <TextView
                         style="@style/fixedTextViewTheme"
-                        android:text="@string/rain"/>
-                    <TextView
-                        android:id="@+id/rainTextView"
-                        style="@style/dataTextViewTheme" />
-                </TableRow>
-                <TableRow
-                    android:layout_width="fill_parent"
-                    android:layout_height="wrap_content"
-                    android:gravity="center_horizontal">
-                    <TextView
-                        style="@style/fixedTextViewTheme"
-                        android:text="@string/hum"/>
+                        android:text="@string/hum" />
+
                     <TextView
                         android:id="@+id/humidityTextView"
                         style="@style/dataTextViewTheme" />
                 </TableRow>
             </TableLayout>
         </ScrollView>
-</TableLayout>
+    </LinearLayout>
 </LinearLayout>
