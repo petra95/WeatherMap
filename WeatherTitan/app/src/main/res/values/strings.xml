@@ -8,4 +8,10 @@
     <string name="searchable">Searchable</string>
     <string name="menu_search">Search</string>
     <string name="searchable_hint">Search</string>
+    <string name="slot1_load_title">load_slot1_empty</string>
+    <string name="slot1_save_title">save_slot1</string>
+    <string name="slot2_load_title">load_slot2_empty</string>
+    <string name="slot2_save_title">save_slot2</string>
+    <string name="slot3_load_title">load_slot3_empty</string>
+    <string name="slot3_save_title">save_slot3</string>
 </resources>
