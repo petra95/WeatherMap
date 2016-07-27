@@ -19,8 +19,6 @@ public class JsonParser {
     private static final String TAG_TEMP_MAX= "temp_max";
     private static final String TAG_WIND = "wind";
     private static final String TAG_WIND_SPEED = "speed";
-    private static final String TAG_RAIN = "rain";
-    private static final String TAG_RAIN_3H = "3h";
     private static final String TAG_NAME = "name";
 
     private String mRawJson;
@@ -38,13 +36,12 @@ public class JsonParser {
 
                 mProducedWeather.setmCountry(jObj.getJSONObject(TAG_SYS).getString(TAG_COUNTRY));
                 mProducedWeather.setmDescription(jObj.getJSONArray(TAG_WEATHER).getJSONObject(0).getString(TAG_DESCRIPTION));
-                mProducedWeather.setmIcon(jObj.getJSONArray(TAG_WEATHER).getJSONObject(0).getString(TAG_ICON).concat(".png"));
+                mProducedWeather.setmIcon("http://openweathermap.org/img/w/" + jObj.getJSONArray(TAG_WEATHER).getJSONObject(0).getString(TAG_ICON).concat(".png"));
                 mProducedWeather.setmTemperature(jObj.getJSONObject(TAG_MAIN).getInt(TAG_TEMPERATURE));
                 mProducedWeather.setmHumidity(jObj.getJSONObject(TAG_MAIN).getInt(TAG_HUMIDITY));
                 mProducedWeather.setmTempMin(jObj.getJSONObject(TAG_MAIN).getInt(TAG_TEMP_MIN));
                 mProducedWeather.setmTempMax(jObj.getJSONObject(TAG_MAIN).getInt(TAG_TEMP_MAX));
                 mProducedWeather.setmWind(jObj.getJSONObject(TAG_WIND).getInt(TAG_WIND_SPEED));
-                mProducedWeather.setmRain(jObj.getJSONObject(TAG_RAIN).getInt(TAG_RAIN_3H));
                 mProducedWeather.setmCity(jObj.getString(TAG_NAME));
 
                 return mProducedWeather;

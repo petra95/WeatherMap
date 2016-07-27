@@ -20,28 +20,9 @@ public class MainWeather extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_weather);
 
-        TextView mResultTextView;
-        
         mClient = new HttpClient();
 
-        /*SharedPreferences sharedPreferences = getSharedPreferences(MTEXTVALUEKEYSTRING, 0);
-        final EditText editText = (EditText) findViewById(R.id.searchEditText);
-        editText.setText(sharedPreferences.getString("valueText", ""));*/
-
     }
-   /* @Override
-    public void onStop() {
-        super.onStop();
-
-        SharedPreferences sharedPreferences = getSharedPreferences(MTEXTVALUEKEYSTRING,0);
-        SharedPreferences.Editor editor = sharedPreferences.edit();
-        EditText editText = (EditText) findViewById(R.id.searchEditText);
-        editor.putString("valueText", editText.getText().toString());
-
-        editor.commit();
-    }*/
-
-
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -57,9 +38,17 @@ public class MainWeather extends AppCompatActivity {
 
                     @Override
                     public boolean onQueryTextSubmit(String query) {
-                        mClient.getWeatherData(query);
-                        JsonParser mWeatherParser = new JsonParser(mClient.getWeatherData(query));
-                        mResultWeather = mWeatherParser.processWeatherFromJson();
+                        final String mFinalQuery = query;
+                        Thread mNetworkThread = new Thread(new Runnable() {
+                            public void run() {
+                                JsonParser mWeatherParser = new JsonParser(mClient.getWeatherData(mFinalQuery));
+                                mResultWeather = mWeatherParser.processWeatherFromJson();
+                            }
+                        });
+                        mNetworkThread.start();
+                        try {
+                            mNetworkThread.join();
+                        } catch (InterruptedException e) {}
                         assignWeatherValues(mResultWeather);
                         return false;
                     }
@@ -74,22 +63,19 @@ public class MainWeather extends AppCompatActivity {
     }
 
     private void assignWeatherValues(Weather weatherData) {
-        setTextViewText(R.id.cityTextView, weatherData.getmCity().concat(", " + weatherData.getmCountry()));
+        setTextViewText(R.id.cityTextView, weatherData.getmCity().concat(" " + weatherData.getmCountry()));
         setTextViewText(R.id.degreeTextView, String.valueOf(weatherData.getmTemperature()));
         setTextViewText(R.id.descriptionTextView, weatherData.getmDescription());
         setTextViewText(R.id.minDegTextView, String.valueOf(weatherData.getmTempMin()));
         setTextViewText(R.id.maxDegTextView, String.valueOf(weatherData.getmTempMax()));
         setTextViewText(R.id.windTextView, String.valueOf(weatherData.getmWind()));
-        setTextViewText(R.id.rainTextView, String.valueOf(weatherData.getmRain()));
         setTextViewText(R.id.humidityTextView, String.valueOf(weatherData.getmHumidity()));
     }
 
-    
     private void setTextViewText(int id, String value){
         TextView textView = (TextView) findViewById(id);
         textView.setText(value);
     }
-
 }
 
 
