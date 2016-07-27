@@ -15,7 +15,7 @@ public class Weather {
 
         mCity = "Unknown Settlement!";
         mCountry = "";
-        mDescription = "";
+        mDescription = "dkanrgneq orgnoe GN O QERTGH NOENAhg";
         mTemperature = 0;
         mTempMin = 0;
         mTempMax = 0;

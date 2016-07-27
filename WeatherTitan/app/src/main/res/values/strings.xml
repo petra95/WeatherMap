@@ -3,7 +3,6 @@
     <string name="min">Minimum</string>
     <string name="max">Maximum</string>
     <string name="wind">Wind force</string>
-    <string name="rain">Rain</string>
     <string name="hum">Humidity</string>
     <string name="searchButton">Search</string>
     <string name="searchable">Searchable</string>

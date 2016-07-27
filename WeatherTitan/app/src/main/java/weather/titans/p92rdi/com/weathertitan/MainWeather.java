@@ -7,6 +7,9 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.support.v7.widget.SearchView;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.ImageView;
+import android.widget.TableLayout;
 import android.widget.TextView;
 
 
@@ -33,6 +36,8 @@ public class MainWeather extends AppCompatActivity {
         MenuItem menuItem = menu.findItem(R.id.menu_search);
         SearchView searchView = (SearchView) MenuItemCompat.getActionView(menuItem);
 
+        final TableLayout mDataTableLayout = (TableLayout) findViewById(R.id.dataTableLayout);
+
         searchView.setOnQueryTextListener(
                 new SearchView.OnQueryTextListener() {
 
@@ -48,8 +53,11 @@ public class MainWeather extends AppCompatActivity {
                         mNetworkThread.start();
                         try {
                             mNetworkThread.join();
-                        } catch (InterruptedException e) {}
+                        } catch (InterruptedException e) {
+                        }
                         assignWeatherValues(mResultWeather);
+                        mDataTableLayout.setVisibility(View.VISIBLE);
+
                         return false;
                     }
 
@@ -70,9 +78,11 @@ public class MainWeather extends AppCompatActivity {
         setTextViewText(R.id.maxDegTextView, String.valueOf(weatherData.getmTempMax()));
         setTextViewText(R.id.windTextView, String.valueOf(weatherData.getmWind()));
         setTextViewText(R.id.humidityTextView, String.valueOf(weatherData.getmHumidity()));
+        ImageView mImageView = (ImageView) findViewById(R.id.weatherImageView);
+        mImageView.setImageBitmap();
     }
 
-    private void setTextViewText(int id, String value){
+    private void setTextViewText(int id, String value) {
         TextView textView = (TextView) findViewById(id);
         textView.setText(value);
     }

@@ -4,6 +4,5 @@
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
     <color name="backGroundColor">#e7f5f7</color>
-    <color name="fixedTextColor">#2A2315</color>
-    <color name="dataTextColor">#3f382c</color>
+    <color name="textColor">#000080</color>
 </resources>
