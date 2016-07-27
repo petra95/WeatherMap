@@ -25,18 +25,12 @@
                 android:id="@+id/weatherImageView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:adjustViewBounds="true"
-                android:maxWidth="@dimen/activity_horizontal_margin"
-                android:maxHeight="@dimen/activity_horizontal_margin"
                 android:background="@color/colorPrimaryDark"/>
             <TextView
                 android:id="@+id/degreeTextView"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:gravity="end"
+                style="@style/degreeTextViewTheme"
                 android:paddingStart="10dp"
-                android:paddingEnd="10dp"
-                android:textSize="@dimen/temp_text_view_size" />
+                android:paddingEnd="10dp" />
         </LinearLayout>
 
         <TextView
@@ -49,9 +43,8 @@
 
     <ScrollView>
     <TableLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:paddingBottom="10dp">
+        android:id="@+id/dataTableLayout"
+        style="@style/dataTableLayoutTheme">
         <TableRow
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
@@ -85,7 +78,7 @@
                 android:id="@+id/windTextView"
                 style="@style/dataTextViewTheme" />
         </TableRow>
-        <TableRow
+        <!--<TableRow
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:gravity="center_horizontal">
@@ -95,7 +88,7 @@
             <TextView
                 android:id="@+id/rainTextView"
                 style="@style/dataTextViewTheme" />
-        </TableRow>
+        </TableRow>-->
         <TableRow
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"

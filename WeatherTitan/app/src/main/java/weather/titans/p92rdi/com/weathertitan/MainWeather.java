@@ -7,6 +7,8 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.support.v7.widget.SearchView;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.TableLayout;
 import android.widget.TextView;
 
 
@@ -19,8 +21,6 @@ public class MainWeather extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_weather);
-
-        TextView mResultTextView;
         
         mClient = new HttpClient();
 
@@ -52,6 +52,8 @@ public class MainWeather extends AppCompatActivity {
         MenuItem menuItem = menu.findItem(R.id.menu_search);
         SearchView searchView = (SearchView) MenuItemCompat.getActionView(menuItem);
 
+        final TableLayout mDataTableLayout = (TableLayout) findViewById(R.id.dataTableLayout);
+
         searchView.setOnQueryTextListener(
                 new SearchView.OnQueryTextListener() {
 
@@ -61,6 +63,8 @@ public class MainWeather extends AppCompatActivity {
                         JsonParser mWeatherParser = new JsonParser(mClient.getWeatherData(query));
                         mResultWeather = mWeatherParser.processWeatherFromJson();
                         assignWeatherValues(mResultWeather);
+                        mDataTableLayout.setVisibility(View.VISIBLE);
+
                         return false;
                     }
 
@@ -80,7 +84,7 @@ public class MainWeather extends AppCompatActivity {
         setTextViewText(R.id.minDegTextView, String.valueOf(weatherData.getmTempMin()));
         setTextViewText(R.id.maxDegTextView, String.valueOf(weatherData.getmTempMax()));
         setTextViewText(R.id.windTextView, String.valueOf(weatherData.getmWind()));
-        setTextViewText(R.id.rainTextView, String.valueOf(weatherData.getmRain()));
+       //setTextViewText(R.id.rainTextView, String.valueOf(weatherData.getmRain()));
         setTextViewText(R.id.humidityTextView, String.valueOf(weatherData.getmHumidity()));
     }
 
