@@ -1,25 +1,31 @@
 package weather.titans.p92rdi.com.weathertitan;
 
+import android.graphics.Bitmap;
+
 public class Weather {
+    private int mCityId;
     private String mCity;
     private String mCountry;
     private String mDescription;
     private int mTemperature;
     private int mTempMin;
     private int mTempMax;
-    private String mIcon;
+    private Bitmap mIcon;
+    private String mIconCode;
     private int mHumidity;
     private int mWind;
 
     public Weather() {
 
+        mCityId = -1;
         mCity = "Unknown Settlement!";
         mCountry = "";
-        mDescription = "dkanrgneq orgnoe GN O QERTGH NOENAhg";
-        mTemperature = 0;
-        mTempMin = 0;
-        mTempMax = 0;
-        mIcon = "";
+        mDescription = "";
+        mTemperature = 273;
+        mTempMin = 273;
+        mTempMax = 273;
+        mIcon = null;
+        mIconCode = "";
         mHumidity = 0;
         mWind = 0;
     }
@@ -72,11 +78,11 @@ public class Weather {
         this.mTempMax = mTempMax;
     }
 
-    public String getmIcon() {
+    public Bitmap getmIcon() {
         return mIcon;
     }
 
-    public void setmIcon(String mIcon) {
+    public void setmIcon(Bitmap mIcon) {
         this.mIcon = mIcon;
     }
 
@@ -94,5 +100,21 @@ public class Weather {
 
     public void setmWind(int mWind) {
         this.mWind = mWind;
+    }
+
+    public int getmCityId() {
+        return mCityId;
+    }
+
+    public void setmCityId(int mCityId) {
+        this.mCityId = mCityId;
+    }
+
+    public String getmIconCode() {
+        return mIconCode;
+    }
+
+    public void setmIconCode(String mIconCode) {
+        this.mIconCode = mIconCode;
     }
 }

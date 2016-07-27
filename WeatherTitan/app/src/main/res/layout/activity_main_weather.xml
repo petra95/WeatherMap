@@ -23,9 +23,9 @@
             android:weightSum="1">
             <ImageView
                 android:id="@+id/weatherImageView"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:background="@color/colorPrimaryDark"/>
+                android:layout_width="130dp"
+                android:layout_height="match_parent"
+                android:layout_gravity="center" />
             <TextView
                 android:id="@+id/degreeTextView"
                 style="@style/degreeTextViewTheme"

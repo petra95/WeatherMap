@@ -7,6 +7,7 @@ import org.json.JSONObject;
 import org.json.JSONException;
 
 public class JsonParser {
+    private static final String TAG_ID = "id";
     private static final String TAG_SYS = "sys";
     private static final String TAG_COUNTRY = "country";
     private static final String TAG_WEATHER = "weather";
@@ -34,9 +35,10 @@ public class JsonParser {
                 JSONObject jObj = new JSONObject(mRawJson);
                 Weather mProducedWeather = new Weather();
 
+                mProducedWeather.setmCityId(jObj.getInt(TAG_ID));
                 mProducedWeather.setmCountry(jObj.getJSONObject(TAG_SYS).getString(TAG_COUNTRY));
                 mProducedWeather.setmDescription(jObj.getJSONArray(TAG_WEATHER).getJSONObject(0).getString(TAG_DESCRIPTION));
-                mProducedWeather.setmIcon("http://openweathermap.org/img/w/" + jObj.getJSONArray(TAG_WEATHER).getJSONObject(0).getString(TAG_ICON).concat(".png"));
+                mProducedWeather.setmIconCode(jObj.getJSONArray(TAG_WEATHER).getJSONObject(0).getString(TAG_ICON).concat(".png"));
                 mProducedWeather.setmTemperature(jObj.getJSONObject(TAG_MAIN).getInt(TAG_TEMPERATURE));
                 mProducedWeather.setmHumidity(jObj.getJSONObject(TAG_MAIN).getInt(TAG_HUMIDITY));
                 mProducedWeather.setmTempMin(jObj.getJSONObject(TAG_MAIN).getInt(TAG_TEMP_MIN));

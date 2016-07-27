@@ -1,7 +1,11 @@
 package weather.titans.p92rdi.com.weathertitan;
 
 
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+
 import java.io.BufferedReader;
+import java.io.ByteArrayOutputStream;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
@@ -12,6 +16,7 @@ public class HttpClient {
     private static String BASE_URL_NAME = "http://api.openweathermap.org/data/2.5/weather?q=";
     private static String API_KEY = "&appid=6400cc1cfebfb4e0cab17b0eb34472da";
     private static String BASE_URL_ID = "http://api.openweathermap.org/data/2.5/weather?id=";
+    private static String IMG_URL = "http://openweathermap.org/img/w/";
 
     public String getWeatherData(String cityName) {
         HttpURLConnection mConnection = null;
@@ -62,6 +67,26 @@ public class HttpClient {
             mInputStream.close();
             mConnection.disconnect();
             return mStringBuilder.toString();
+        }
+        catch(Throwable t) {
+            t.printStackTrace();
+            return null;
+        }
+    }
+
+    public Bitmap getImage(String code) {
+        HttpURLConnection con = null ;
+        InputStream is = null;
+
+        try {
+            con = (HttpURLConnection) ( new URL(IMG_URL + code)).openConnection();
+            con.setRequestMethod("GET");
+            con.setDoInput(true);
+            con.connect();
+
+            is = con.getInputStream();
+
+            return BitmapFactory.decodeStream(is);
         }
         catch(Throwable t) {
             t.printStackTrace();
