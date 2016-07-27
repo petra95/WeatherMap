@@ -2,7 +2,6 @@ package weather.titans.p92rdi.com.weathertitan;
 
 
 import android.util.Log;
-
 import org.json.JSONObject;
 import org.json.JSONException;
 

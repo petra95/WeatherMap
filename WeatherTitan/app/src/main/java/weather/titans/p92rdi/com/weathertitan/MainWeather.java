@@ -14,7 +14,6 @@ import android.widget.ImageView;
 import android.widget.TableLayout;
 import android.widget.TextView;
 
-
 public class MainWeather extends AppCompatActivity {
 
     HttpClient mClient;
@@ -26,7 +25,6 @@ public class MainWeather extends AppCompatActivity {
         setContentView(R.layout.activity_main_weather);
 
         mClient = new HttpClient();
-
     }
 
     @Override
@@ -40,7 +38,7 @@ public class MainWeather extends AppCompatActivity {
 
         final TableLayout mDataTableLayout = (TableLayout) findViewById(R.id.dataTableLayout);
 
-        searchView.setOnQueryTextListener(
+        searchView.setOnQueryTextListener (
                 new SearchView.OnQueryTextListener() {
 
                     @Override
@@ -57,8 +55,7 @@ public class MainWeather extends AppCompatActivity {
                         mNetworkThread.start();
                         try {
                             mNetworkThread.join();
-                        } catch (InterruptedException e) {
-                        }
+                        } catch (InterruptedException e) { }
                         assignWeatherValues(mResultWeather);
                         mDataTableLayout.setVisibility(View.VISIBLE);
 
