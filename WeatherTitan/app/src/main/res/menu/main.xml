@@ -11,4 +11,34 @@
         app:showAsAction="ifRoom|collapseActionView"
         app:actionViewClass="android.support.v7.widget.SearchView"/>
 
+    <item
+        android:id="@+id/menu_load_slot1"
+        android:title="load_slot1_empty"
+        android:onClick="LoadCityWeather"
+        />
+    <item
+        android:id="@+id/menu_save_slot1"
+        android:title="save_slot1"
+        android:onClick="SaveCityWeather"
+        />
+    <item
+        android:id="@+id/menu_load_slot2"
+        android:title="laod_slot2_empty"
+        android:onClick="LoadCityWeather"
+        />
+    <item
+        android:id="@+id/menu_save_slot2"
+        android:title="save_slot2"
+        android:onClick="SaveCityWeather"
+        />
+    <item
+        android:id="@+id/menu_load_slot3"
+        android:title="laod_slot3_empty"
+        android:onClick="LoadCityWeather"
+        />
+    <item
+        android:id="@+id/menu_save_slot3"
+        android:title="save_slot3"
+        android:onClick="SaveCityWeather"
+        />
 </menu>

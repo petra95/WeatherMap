@@ -1,5 +1,6 @@
 package weather.titans.p92rdi.com.weathertitan;
 
+import android.content.SharedPreferences;
 import android.support.v4.view.MenuItemCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -12,6 +13,12 @@ import android.widget.TextView;
 
 public class MainWeather extends AppCompatActivity {
 
+    private final String SAVECITYNAMEKEY = "CityName";
+
+    private SharedPreferences mActualCityNameSharedPreferences;
+    private String mActualCityNameString = "";
+    private int mActualCityIDInt;
+
     HttpClient mClient;
     Weather mResultWeather;
 
@@ -20,26 +27,30 @@ public class MainWeather extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_weather);
 
-        TextView mResultTextView;
-        
         mClient = new HttpClient();
-
-        /*SharedPreferences sharedPreferences = getSharedPreferences(MTEXTVALUEKEYSTRING, 0);
-        final EditText editText = (EditText) findViewById(R.id.searchEditText);
-        editText.setText(sharedPreferences.getString("valueText", ""));*/
+        mActualCityNameSharedPreferences = getSharedPreferences(SAVECITYNAMEKEY, 0);
 
     }
-   /* @Override
-    public void onStop() {
-        super.onStop();
 
-        SharedPreferences sharedPreferences = getSharedPreferences(MTEXTVALUEKEYSTRING,0);
-        SharedPreferences.Editor editor = sharedPreferences.edit();
-        EditText editText = (EditText) findViewById(R.id.searchEditText);
-        editor.putString("valueText", editText.getText().toString());
+    private void loadWeatherData() {
+        String mCityNameString = mActualCityNameSharedPreferences.getString(SAVECITYNAMEKEY, "");
+        if(!mCityNameString.equals("")) {
+            getWeather(mCityNameString);
+        }
+    }
 
-        editor.commit();
-    }*/
+    @Override
+    public void onSaveInstanceState(Bundle savedInstanceState){
+        savedInstanceState.putString(SAVECITYNAMEKEY, mActualCityNameString);
+
+        super.onSaveInstanceState(savedInstanceState);
+    }
+
+    @Override
+    public void onRestoreInstanceState(Bundle savedInstanceState){
+        super.onRestoreInstanceState(savedInstanceState);
+        getWeather(savedInstanceState.getString(SAVECITYNAMEKEY));
+    }
 
 
 
@@ -52,15 +63,16 @@ public class MainWeather extends AppCompatActivity {
         MenuItem menuItem = menu.findItem(R.id.menu_search);
         SearchView searchView = (SearchView) MenuItemCompat.getActionView(menuItem);
 
+        MenuItem menuItem1 = menu.findItem(R.id.menu_load_slot1);
+
         searchView.setOnQueryTextListener(
                 new SearchView.OnQueryTextListener() {
 
                     @Override
                     public boolean onQueryTextSubmit(String query) {
-                        mClient.getWeatherData(query);
-                        JsonParser mWeatherParser = new JsonParser(mClient.getWeatherData(query));
-                        mResultWeather = mWeatherParser.processWeatherFromJson();
-                        assignWeatherValues(mResultWeather);
+
+                        getWeather(query);
+                        saveCityName(query);
                         return false;
                     }
 
@@ -89,6 +101,21 @@ public class MainWeather extends AppCompatActivity {
         TextView textView = (TextView) findViewById(id);
         textView.setText(value);
     }
+
+    private void saveCityName(String query){
+        SharedPreferences.Editor editor1 = mActualCityNameSharedPreferences.edit();
+        editor1.putString(SAVECITYNAMEKEY, query);
+        editor1.commit();
+    }
+
+    private void getWeather(String query) {
+        mClient.getWeatherData(query);
+        JsonParser mWeatherParser = new JsonParser(mClient.getWeatherData(query));
+        mResultWeather = mWeatherParser.processWeatherFromJson();
+        mActualCityNameString = mResultWeather.getmCity();
+        assignWeatherValues(mResultWeather);
+    }
+
 
 }
 
