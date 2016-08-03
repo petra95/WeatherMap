@@ -21,15 +21,7 @@ public class JsonParser {
     private static final String TAG_WIND_SPEED = "speed";
     private static final String TAG_NAME = "name";
 
-    private String mRawJson;
-
-    public JsonParser(String mRawJson) {
-        this.mRawJson = mRawJson;
-
-    }
-
-    public Weather processWeatherFromJson() {
-        if (mRawJson != null) {
+    public Weather processWeatherFromJson(String mRawJson) {
             try {
                 JSONObject jObj = new JSONObject(mRawJson);
                 Weather mProducedWeather = new Weather();
@@ -52,9 +44,4 @@ public class JsonParser {
                 return new Weather();
             }
         }
-        else {
-            Log.e("ServiceHandler", "No data received from HTTP request");
-            return new Weather();
-        }
     }
-}
